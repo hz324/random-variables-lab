@@ -1,0 +1,12 @@
+% Random variable generation with the calculated cdf:
+% Generating uniform random variable
+x1=rand(10000,1);
+%Converting uniform random variable into the desired ex
+y=log(1-x1);
+figure(1)
+histogram(y,100,'Normalization', 'pdf')
+hold on
+x2 = [0:.1:15];
+yt=(1./((2*pi*x2).^0.5).*exp(-(x2)./2));
+plot(x2, yt)
+legend('Histogram','Transformed Normal PDF')
